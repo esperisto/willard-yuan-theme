@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Django web开发指南阅读笔记(一)
+title: 编码训练：Django web开发指南阅读笔记(一)
 categories: [Django]
 tags: Django
 ---
@@ -44,9 +44,3 @@ Django遵循分层原则,不过在做法上跟常规的MVC却略有不同.首先
 ## Django框架总览
 
 MVC模板的Django的术语里应该是"MTV".视图作为控制器通过ORM负责从数据库创建,更新和删除数据库模型,同时根据给定的模板管理最终用户看到的结果.
-
-
-
-
-
-

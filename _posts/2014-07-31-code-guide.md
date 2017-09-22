@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Code Guide-规范自我编程风格
+title: 编码训练：Code Guide-规范自我编程风格
 categories: [编程规范]
 tags: 规范
 ---
@@ -10,4 +10,3 @@ tags: 规范
 
 ## 目录名
 **目录名参照上一条规则,有复数结构时，要采用复数命名法**，比如说： scripts, styles, images, data-models。这一条也是非常值得采纳的，通过目录是否是复数，可以在不进入具体目录下就知道这个目录下是单个文件还是多个文件。
-

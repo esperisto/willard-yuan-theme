@@ -54,7 +54,27 @@ cmake --build . --config Release
 
 ***注意***：在Xcode中使用**dlib**时，记得把**X11**，如下面所示：
 
-![](http://i300.photobucket.com/albums/nn17/willard-yuan/x11_zpsvho1a1p8.png)
+![](http://ose5hybez.bkt.clouddn.com/2015/0109/x11_zpsvho1a1p8.PNG)
+
+Dlib-19.1编译的时候，在安装了XQuartz的前提下，仍然报与X11的错误，具体如下：
+
+```sh
+make[2]: *** [dlib_build/CMakeFiles/dlib.dir/gui_widgets/fonts.cpp.o] Error 1
+make[1]: *** [dlib_build/CMakeFiles/dlib.dir/all] Error 2
+make: *** [all] Error 2
+error: cmake build failed!
+```
+完全删除XQuartz(如何完全删除XQuartz可以参考这个[传送门](https://gist.github.com/tonymtz/714e73ccb79e21c4fc9c))，重新安装仍然出现此问题，遂将编译器改为llvm，具体编译命令为：
+
+```sh
+cd examples
+mkdir build
+cd build
+cmake -G Xcode ..
+cmake --build . --config Release
+```
+编译成功。
+
 
 ## 检测物体
 
@@ -147,6 +167,6 @@ D-lib支持Opencv，所以可以将D-lib和OpenCV结合起来使用。D-lib对Op
 
 实际上，在用cmake编译的时候，dlib文件夹下cmake文件里有设置SSE2开启了。所以如果我们要提高在VS2008里面编译出来的程序的执行效率，我们要在VS2008编译的时候做开始SSE2的设置。详细设置如下：
 
-![vs2008-sse2]({{ site.url }}/images/posts/vs2008-sse2.jpg)
+![vs2008-sse2](http://ose5hybez.bkt.clouddn.com/2015/0109/vs2008-sse2.jpg)
 
 启用增强指令集中的SSE2即可加速程序的执行效率。
